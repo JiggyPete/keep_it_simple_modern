@@ -48,8 +48,14 @@ describe Author do
 
 	end
 
+		context "using a leading key which is not the duplicate" do
 
+			it "forces breaking things down into each word by choosing non duplicate pair" do
+				author = Author.new("wish I may wish I might")
+				Kernel.stub(:rand).and_return(0, 1)
+				author.new_best_seller_from("may wish").should == 'may wish I might'
+			end
 
-
+		end
 
 end

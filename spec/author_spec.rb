@@ -56,6 +56,12 @@ describe Author do
 				author.new_best_seller_from("may wish").should == 'may wish I might'
 			end
 
+			it "loops back round to first wish I" do
+				author = Author.new("wish I may wish I might")
+				Kernel.stub(:rand).and_return(0,0,0,0,1)
+				author.new_best_seller_from("may wish").should == 'may wish I may wish I might'
+			end			
+
 		end
 
 end

@@ -4,6 +4,6 @@ class Author
 	end
 
 	def new_best_seller_from( key_pair )
-		@inspiration.split.length == 3 ? @inspiration : ""
+		@inspiration.split.length >= 3 ? @inspiration : ""
 	end
 end

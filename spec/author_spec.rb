@@ -34,11 +34,16 @@ describe Author do
 
 	context "two instances of pair" do
 
-		it "inspiration chooses 'may'" do
-			#get rid of [1]
+		it "inspiration chooses 'may'" do			
 			author = Author.new("wish I may wish I might")			
 			author.new_best_seller_from("wish I").should == 'wish I may wish I might'				
 		end	
+
+		it "inspiration chooses 'might'" do
+			author = Author.new("wish I may wish I might")
+			Kernel.stub(:rand).and_return(1)
+			author.new_best_seller_from("wish I").should == 'wish I might'
+		end			
 
 	end
 

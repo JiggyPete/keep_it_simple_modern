@@ -4,6 +4,8 @@ class Author
 	end
 
 	def new_best_seller_from( key_pair )
-		@inspiration.split.length >= 3 ? @inspiration : ""
+		return "" if @inspiration.split.length < 3
+		remaining_text = @inspiration.split(key_pair)[1]
+	 	"#{key_pair}#{remaining_text}"
 	end
 end

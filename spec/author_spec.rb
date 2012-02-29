@@ -17,6 +17,12 @@ describe Author do
 		author.new_best_seller_from("").should == ''
 	end
 
+	it "has just enough inspiration to plagarise the previous best seller" do
+		author = Author.new("I wish I")
+		author.new_best_seller_from("I wish").should == 'I wish I'		
+	end
+
+
 
 
 end

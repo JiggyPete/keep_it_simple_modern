@@ -4,7 +4,6 @@ class Author
 	end
 
 	def new_best_seller_from( key_pair )
-		best_selling_key = "I wish"
-		key_pair == best_selling_key ? @inspiration : ""
+		@inspiration.split.length == 3 ? @inspiration : ""
 	end
 end

@@ -8,6 +8,7 @@ class Author
 
 		phrases = @inspiration.split(key_pair)
 		phrases.shift
+		phrases.shift Kernel.rand(phrases.length)
 		remaining_text = phrases.join(key_pair)
 		"#{key_pair}#{remaining_text}"
 	end

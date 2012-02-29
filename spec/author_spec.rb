@@ -36,6 +36,7 @@ describe Author do
 
 		it "inspiration chooses 'may'" do			
 			author = Author.new("wish I may wish I might")			
+			Kernel.stub(:rand).and_return(0)
 			author.new_best_seller_from("wish I").should == 'wish I may wish I might'				
 		end	
 

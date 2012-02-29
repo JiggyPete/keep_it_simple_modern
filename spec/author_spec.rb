@@ -27,9 +27,10 @@ describe Author do
 		author.new_best_seller_from("I wish").should == 'I wish I there was a nice set of test stories'		
 	end
 
-
-
-
+	it "can inventively plagarise from somewhere other than the start" do
+		author = Author.new("I wish I there was a nice set of test stories")
+		author.new_best_seller_from("wish I").should == 'wish I there was a nice set of test stories'		
+	end
 
 
 end
